@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KidSafe Ride - School Transport Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <rect width="40" height="40" rx="10" fill="url(#gradient)"/>
+                    <path d="M12 20L18 26L28 14" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                        <linearGradient id="gradient" x1="0" y1="0" x2="40" y2="40">
+                            <stop offset="0%" style="stop-color:#FF6B35"/>
+                            <stop offset="100%" style="stop-color:#F7931E"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span>KidSafe Ride</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="routes.html">Routes</a></li>
+                <li><a href="tracking.html">Live Tracking</a></li>
+                <li><a href="drivers.html">Drivers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="btn-login">Parent Login</button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">Trusted by 50+ Schools</span>
+                <h1 class="hero-title">
+                    Safe Journeys,<br>
+                    <span class="gradient-text">Happy Parents</span>
+                </h1>
+                <p class="hero-description">
+                    Track your child's school bus in real-time with precision GPS tracking, 
+                    instant notifications, and verified driver profiles. Peace of mind, every journey.
+                </p>
+                <div class="hero-buttons">
+                    <a href="tracking.html" class="btn btn-primary">Track Your Bus</a>
+                    <a href="routes.html" class="btn btn-secondary">View Routes</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Active Students</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Safe Routes</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">99.9%</span>
+                        <span class="stat-label">On-Time Record</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="gps-tracking-container">
+                    <div class="earth-map">
+                        <svg class="map-grid-overlay" viewBox="0 0 400 400">
+                            <defs>
+                                <radialGradient id="earthGrad">
+                                    <stop offset="0%" style="stop-color:#e0f2fe"/>
+                                    <stop offset="100%" style="stop-color:#bae6fd"/>
+                                </radialGradient>
+                            </defs>
+                            <circle cx="200" cy="200" r="180" fill="url(#earthGrad)" opacity="0.3"/>
+                            <g class="grid-lines" opacity="0.2">
+                                <line x1="200" y1="20" x2="200" y2="380" stroke="#14b8a6" stroke-width="1"/>
+                                <line x1="20" y1="200" x2="380" y2="200" stroke="#14b8a6" stroke-width="1"/>
+                                <circle cx="200" cy="200" r="60" fill="none" stroke="#14b8a6" stroke-width="1"/>
+                                <circle cx="200" cy="200" r="120" fill="none" stroke="#14b8a6" stroke-width="1"/>
+                                <circle cx="200" cy="200" r="180" fill="none" stroke="#14b8a6" stroke-width="1"/>
+                            </g>
+                        </svg>
+                        
+                        <div class="radar-sweep"></div>
+                    </div>
+        
+        <!-- Orbiting Satellites -->
+                    <div class="satellite satellite-1">
+                        <svg width="50" height="50" viewBox="0 0 50 50">
+                            <g>
+                                <!-- Satellite body -->
+                                <rect x="18" y="15" width="14" height="20" fill="#14b8a6" rx="2"/>
+                                <rect x="20" y="17" width="10" height="4" fill="#06b6d4"/>
+                                <rect x="20" y="24" width="10" height="4" fill="#06b6d4"/>
+                                <rect x="20" y="31" width="10" height="4" fill="#06b6d4"/>
+                                <!-- Solar panels -->
+                                <rect x="5" y="20" width="12" height="10" fill="#fbbf24"/>
+                                <rect x="33" y="20" width="12" height="10" fill="#fbbf24"/>
+                                <!-- Antenna -->
+                                <line x1="25" y1="15" x2="25" y2="8" stroke="#14b8a6" stroke-width="2"/>
+                                <circle cx="25" cy="8" r="3" fill="#f59e0b"/>
+                            </g>
+                        </svg>
+                        <!-- Signal beam -->
+                        <div class="signal-beam beam-1"></div>
+                    </div>
+        
+                    <div class="satellite satellite-2">
+                        <svg width="50" height="50" viewBox="0 0 50 50">
+                            <g>
+                                <rect x="18" y="15" width="14" height="20" fill="#06b6d4" rx="2"/>
+                                <rect x="20" y="17" width="10" height="4" fill="#22d3ee"/>
+                                <rect x="20" y="24" width="10" height="4" fill="#22d3ee"/>
+                                <rect x="20" y="31" width="10" height="4" fill="#22d3ee"/>
+                                <rect x="5" y="20" width="12" height="10" fill="#fbbf24"/>
+                                <rect x="33" y="20" width="12" height="10" fill="#fbbf24"/>
+                                <line x1="25" y1="15" x2="25" y2="8" stroke="#06b6d4" stroke-width="2"/>
+                                <circle cx="25" cy="8" r="3" fill="#f59e0b"/>
+                            </g>
+                        </svg>
+                        <div class="signal-beam beam-2"></div>
+                    </div>
+        
+                    <div class="satellite satellite-3">
+                        <svg width="50" height="50" viewBox="0 0 50 50">
+                            <g>
+                                <rect x="18" y="15" width="14" height="20" fill="#0d9488" rx="2"/>
+                                <rect x="20" y="17" width="10" height="4" fill="#5eead4"/>
+                                <rect x="20" y="24" width="10" height="4" fill="#5eead4"/>
+                                <rect x="20" y="31" width="10" height="4" fill="#5eead4"/>
+                                <rect x="5" y="20" width="12" height="10" fill="#fbbf24"/>
+                                <rect x="33" y="20" width="12" height="10" fill="#fbbf24"/>
+                                <line x1="25" y1="15" x2="25" y2="8" stroke="#0d9488" stroke-width="2"/>
+                                <circle cx="25" cy="8" r="3" fill="#f59e0b"/>
+                            </g>
+                        </svg>
+                        <div class="signal-beam beam-3"></div>
+                    </div>
+        
+                    <!-- Bus with GPS indicator -->
+                    <div class="gps-bus">
+                        <div class="bus-icon">
+                            <svg width="60" height="60" viewBox="0 0 60 60">
+                                <circle cx="30" cy="30" r="28" fill="#5eead4" opacity="0.3"/>
+                                <circle cx="30" cy="30" r="20" fill="#14b8a6"/>
+                                <text x="30" y="38" text-anchor="middle" font-size="24">🚌</text>
+                            </svg>
+                        </div>
+                        <!-- GPS pulse rings -->
+                        <div class="gps-pulse pulse-ring-1"></div>
+                        <div class="gps-pulse pulse-ring-2"></div>
+                        <div class="gps-pulse pulse-ring-3"></div>
+                    </div>
+        
+                    <!-- Tracking Data Display -->
+                    <div class="tracking-data">
+                        <div class="data-item">
+                            <div class="data-icon">📡</div>
+                            <div class="data-content">
+                                <div class="data-label">Signal Strength</div>
+                                <div class="data-value">98%</div>
+                            </div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-icon">📍</div>
+                            <div class="data-content">
+                                <div class="data-label">Accuracy</div>
+                                <div class="data-value">±5m</div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Live GPS Badge -->
+                    <div class="gps-live-badge">
+                        <span class="live-dot"></span>
+                        <span>LIVE GPS</span>
+                    </div>
+                </div>
+            </div>      
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose KidSafe Ride?</h2>
+                <p class="section-description">Advanced safety features designed for modern families</p>
+            </div>
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Real-Time GPS Tracking</h3>
+                    <p class="feature-description">
+                        Watch your child's bus location update every 30 seconds with pinpoint accuracy 
+                        on our interactive map.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Smart Notifications</h3>
+                    <p class="feature-description">
+                        Get instant alerts when the bus is 10 minutes away, arrives at your stop, 
+                        or experiences delays.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <circle cx="12" cy="8" r="5"/>
+                            <path d="M20 21a8 8 0 1 0-16 0"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Verified Drivers</h3>
+                    <p class="feature-description">
+                        Access complete driver profiles with background checks, experience, 
+                        and contact information.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M9 11l3 3L22 4"/>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Route History</h3>
+                    <p class="feature-description">
+                        Review past journeys, punctuality records, and route efficiency 
+                        for complete transparency.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Secure Platform</h3>
+                    <p class="feature-description">
+                        Enterprise-grade security with encrypted data, two-factor authentication, 
+                        and privacy controls.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">24/7 Support</h3>
+                    <p class="feature-description">
+                        Our dedicated support team is always available to help with any 
+                        questions or concerns.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Simple, Transparent Pricing</h2>
+                <p class="section-description">Choose the plan that works for your family</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Basic</h3>
+                    <div class="pricing-price">
+                        <span class="currency">₹</span>
+                        <span class="amount">299</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Real-time GPS tracking</li>
+                        <li>✓ Basic notifications</li>
+                        <li>✓ Route information</li>
+                        <li>✓ Driver details</li>
+                    </ul>
+                    <button class="btn-pricing">Get Started</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3 class="pricing-title">Premium</h3>
+                    <div class="pricing-price">
+                        <span class="currency">₹</span>
+                        <span class="amount">499</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Everything in Basic</li>
+                        <li>✓ Smart arrival alerts</li>
+                        <li>✓ Route history (30 days)</li>
+                        <li>✓ Priority support</li>
+                        <li>✓ Multi-child tracking</li>
+                    </ul>
+                    <button class="btn-pricing">Get Started</button>
+                </div>
+
+                <div class="pricing-card">
+                    <h3 class="pricing-title">School Plan</h3>
+                    <div class="pricing-price">
+                        <span class="amount">Custom</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Everything in Premium</li>
+                        <li>✓ Unlimited students</li>
+                        <li>✓ Analytics dashboard</li>
+                        <li>✓ API access</li>
+                        <li>✓ Dedicated support</li>
+                    </ul>
+                    <button class="btn-pricing">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to ensure your child's safety?</h2>
+                <p class="cta-description">Join thousands of parents who trust KidSafe Ride every day</p>
+                <a href="contact.html" class="btn btn-cta">Get Started Today</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="10" fill="url(#gradient2)"/>
+                            <path d="M12 20L18 26L28 14" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                                <linearGradient id="gradient2" x1="0" y1="0" x2="40" y2="40">
+                                    <stop offset="0%" style="stop-color:#FF6B35"/>
+                                    <stop offset="100%" style="stop-color:#F7931E"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>KidSafe Ride</span>
+                    </div>
+                    <p class="footer-description">
+                        Ensuring safe and reliable school transportation with cutting-edge tracking technology.
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="routes.html">Routes</a></li>
+                        <li><a href="tracking.html">Live Tracking</a></li>
+                        <li><a href="drivers.html">Our Drivers</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-contact">
+                        <li>📧 support@kidsaferide.com</li>
+                        <li>📞 +91 98765 43210</li>
+                        <li>📍 Mumbai, Maharashtra</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 KidSafe Ride. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script-updated.js"></script>
+</body>
+</html>
